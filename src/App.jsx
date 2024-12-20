@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import SetupServer from "./Components/SetupServer/SetupServer";
 
@@ -13,7 +14,7 @@ export default function App(){
       </main>
 
       <footer>
-
+        <Footer/>
       </footer>
     </>
   )
