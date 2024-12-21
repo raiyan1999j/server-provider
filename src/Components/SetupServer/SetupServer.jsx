@@ -37,7 +37,7 @@ const existingProduct = [
     }
 ]
 
-export default function SetupServer() {
+export default function SetupServer({modalCondition}) {
     const [firstToggle,setFirstToggle] = useState(false);
     const [secondToggle,setSecondToggle]= useState(true);
     const [selection,setSelection] = useState([]);
@@ -218,7 +218,7 @@ export default function SetupServer() {
                     </span>
                 </button>
 
-                <button className="flex flex-row gap-x-1 items-center font-dmSans font-semibold text-sm leading-[16.8px] text-[#FFFFFF] capitalize py-[11px] px-4 bg-[#147AFF] rounded-[4px] transition-all duration-150 ease-linear hover:bg-[#147AFF]/70">
+                <button className="flex flex-row gap-x-1 items-center font-dmSans font-semibold text-sm leading-[16.8px] text-[#FFFFFF] capitalize py-[11px] px-4 bg-[#147AFF] rounded-[4px] transition-all duration-150 ease-linear hover:bg-[#147AFF]/70" onClick={()=>{modalCondition("createService")}}>
                 <span className="h-[18px] w-[18px]">
                 <FiPlus className="text-lg"/>
                 </span>
