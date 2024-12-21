@@ -1,33 +1,75 @@
 import { FaCheck, FaStar, FaStarHalfAlt } from "react-icons/fa";
-import { FiSearch } from "react-icons/fi";
+import { FiAlertTriangle, FiSearch } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
 import { TbPencil } from "react-icons/tb";
 import { Container, ServiceList } from "../LocalData/Localdata";
 import { IoIosCheckmark } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { useEffect, useRef, useState } from "react";
 
 export default function CreateService() {
+  const sampleName = useRef("");
+  const [warnCond,setWarnCond] = useState(false);
+
+  const formHandler=(event)=>{
+    event.preventDefault();
+    const checkValue = sampleName.current.value;
+
+    if(!checkValue){
+      setWarnCond(true)
+
+      sampleName.current.value = ""
+    }
+  }
+
+  useEffect(()=>{
+    if(warnCond){
+      setTimeout(()=>{
+        setWarnCond(false)
+      },4000)
+    }
+  },[warnCond])
   return (
     <>
-      <section className="w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[72px] relative">
-        <span className="absolute h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center top-0 -right-8 transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]">
-        <RxCross2 className="text-[#919DB9] transition-all duration-150 ease-linear group-hover:scale-125 active:text-black" />
-        </span>
-        <div className="w-[986px] mx-auto">
+    <section className={`w-[1050px] h-[42px] mx-auto flex flex-row items-center justify-between mt-[72px] bg-[#f8a6430a] pl-6 pr-[18px] rounded-[4px] transition-all duration-150 ease-linear ${warnCond?"opacity-100":"opacity-0"}`}>
+        <div className="flex flex-row items-center gap-x-[10px]">
+          <span>
+          <FiAlertTriangle className="text-lg text-[#F8A643]"/>
+          </span>
+
+          <p className="text-[#A1A7BA] font-dmSans font-normal text-sm leading-[14px]">
+          Warning: You must create a name for your Blueprint
+          </p>
+        </div>
+
+        <div className="h-3 w-3 rounded-[4px] border border-[#F8A643] flex justify-center items-center hover:cursor-pointer" onClick={()=>{setWarnCond(!warnCond)}}>
+        <RxCross2 className=" text-[6px] text-[#F8A643]"/>
+        </div>
+      </section>
+
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px]`}>
+        <div className="w-[986px] mx-auto flex flex-row justify-between items-center">
           <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] text-[#FFFFFF] capitalize">
             create blueprint
           </h2>
+
+          <span className="h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]">
+        <RxCross2 className="text-[#919DB9] transition-all duration-150 ease-linear group-hover:scale-125 active:text-black" />
+        </span>
         </div>
 
         <div className="w-[986px] mx-auto mt-8">
           <div className="w-full h-[56px] relative">
+          <form onSubmit={formHandler}>
             <input
               type="text"
-              className="h-full w-full bg-transparent rounded-[4px] border border-[#313A6C] font-dmSans font-normal text-base leading-[18px] text-[#919DB9] pl-[61px] absolute top-0 left-0"
+              className={`h-full w-full bg-transparent rounded-[4px] border font-dmSans font-normal text-base leading-[18px]  pl-[61px] absolute top-0 left-0 focus:border-[#32BA7C] focus:outline-none ${warnCond?"border-[#FC573B] text-[#FC573B] placeholder:text-[#FC573B] focus:border-[#FC573B]":"border-[#313A6C] text-[#919DB9]"}`}
+              ref={sampleName}
               placeholder="Name your blueprint"
             />
+            </form>
             <span className="h-6 w-6 flex justify-center items-center absolute top-4 left-[29px]">
-              <TbPencil className="text-2xl text-[#FFFFFF]" />
+              <TbPencil className={`text-2xl  ${warnCond?"text-[#FC573B]":"text-[#FFFFFF]"}`} />
             </span>
           </div>
         </div>
