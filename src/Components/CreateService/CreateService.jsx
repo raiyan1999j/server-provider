@@ -4,11 +4,15 @@ import { ImCross } from "react-icons/im";
 import { TbPencil } from "react-icons/tb";
 import { Container, ServiceList } from "../LocalData/Localdata";
 import { IoIosCheckmark } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 export default function CreateService() {
   return (
     <>
-      <section className="w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 px-8 mt-[72px]">
+      <section className="w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[72px] relative">
+        <span className="absolute h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center top-0 -right-8 transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]">
+        <RxCross2 className="text-[#919DB9] transition-all duration-150 ease-linear group-hover:scale-125 active:text-black" />
+        </span>
         <div className="w-[986px] mx-auto">
           <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] text-[#FFFFFF] capitalize">
             create blueprint
@@ -28,7 +32,7 @@ export default function CreateService() {
           </div>
         </div>
 
-        <div className="w-[986px] h-[60px] mx-auto bg-[#171A30] flex flex-row items-center justify-between pl-5 pr-[7px] mt-4">
+        <div className="w-[986px] h-[60px] rounded-[4px] mx-auto bg-[#171A30] flex flex-row items-center justify-between pl-5 pr-[7px] mt-4">
           <div>
             <ul className="flex flex-row gap-x-10">
               <li className=" font-dmSans font-medium text-lg leading-5 capitalize text-[#A1A7BA] transition-all duration-150 ease-linear hover:cursor-pointer hover:text-[#FFFFFF] after:content-'' after:h-[2px] after:w-[100px] after:bg-white after:table after:translate-y-[18px] after:translate-x-[-18px] after:opacity-0 hover:after:opacity-100">
@@ -149,6 +153,12 @@ export default function CreateService() {
               </div>
             );
           })}
+        </div>
+
+        <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px]">
+          <button className=" font-dmSans font-semibold text-base leading-[19.2px] text-[#FFFFFF] py-3 px-8 bg-[#147AFF] rounded-lg transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60">
+            Next
+          </button>
         </div>
       </section>
     </>
