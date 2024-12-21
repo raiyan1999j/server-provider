@@ -7,9 +7,10 @@ import { IoIosCheckmark } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 
-export default function CreateService() {
+export default function CreateService({modalCondition}) {
   const sampleName = useRef("");
   const [warnCond,setWarnCond] = useState(false);
+  const [selection,setSelection] = useState([]);
 
   const formHandler=(event)=>{
     event.preventDefault();
@@ -22,6 +23,15 @@ export default function CreateService() {
     }
   }
 
+  const optSelection=(idNumber)=>{
+    setSelection((prev)=>{
+      if(prev.includes(idNumber)){
+        return prev.filter(items=>items != idNumber);
+      }else{
+        return [...prev,idNumber]
+      }
+    })
+  }
   useEffect(()=>{
     if(warnCond){
       setTimeout(()=>{
@@ -53,7 +63,7 @@ export default function CreateService() {
             create blueprint
           </h2>
 
-          <span className="h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]">
+          <span className="h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]" onClick={()=>{modalCondition("setupServer")}}>
         <RxCross2 className="text-[#919DB9] transition-all duration-150 ease-linear group-hover:scale-125 active:text-black" />
         </span>
         </div>
@@ -136,7 +146,7 @@ export default function CreateService() {
         <div className="w-[986px] h-[524px] overflow-hidden mx-auto mt-6 grid grid-cols-[repeat(3,_318px)] gap-x-4 gap-y-4">
           {ServiceList().map((items, index) => {
             return (
-              <div className="w-full bg-[#171A30] rounded-[4px] pt-4" key={index}>
+              <div className={`w-full bg-[#171A30] rounded-[4px] pt-4 transition-all duration-150 ease-linear hover:border hover:border-[#147AFF] hover:cursor-pointer ${selection.includes(index)?"border border-[#147AFF]":"border-none"}`} key={index} onClick={()=>{optSelection(index)}}>
                 <div className="flex flex-row justify-between px-4 mb-6">
                   <div className="flex flex-row w-[258px] gap-x-4">
                     <div className="w-12">
@@ -157,9 +167,12 @@ export default function CreateService() {
                     </div>
                   </div>
 
-                  <div className="h-[18px] w-[18px] rounded-full flex justify-center items-center border border-[#313A6C]">
+                  <div className={`h-[18px] w-[18px] rounded-full flex justify-center items-center border ${selection.includes(index)?"border-[#147AFF]":"border-[#313A6C]"}`}>
                     <span>
-                      <IoIosCheckmark className=""/>
+                      {
+                        selection.includes(index)?
+                        <IoIosCheckmark className="text-[#147AFF]"/>:""
+                      }
                     </span>
                   </div>
                 </div>

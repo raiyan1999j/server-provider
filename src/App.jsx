@@ -22,7 +22,9 @@ export default function App(){
         <SetupServer 
         modalCondition={(subject)=>{conditionalModal(subject)}}/>:
         currentModal == "createService"?
-        <CreateService/>:
+        <CreateService
+        modalCondition={(subject)=>{conditionalModal(subject)}}
+        />:
         ""
       }
         
