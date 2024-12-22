@@ -34,11 +34,11 @@ export default function CreateService({modalCondition}) {
     })
   }
 
-  const conditionalModal=()=>{
+  const conditionalModal=(modal)=>{
     setEffect(false);
 
     setTimeout(()=>{
-      modalCondition("setupServer")
+      modalCondition(modal)
     },200)
   }
   useEffect(()=>{
@@ -220,7 +220,7 @@ export default function CreateService({modalCondition}) {
         </div>
 
         <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px]">
-          <button className=" font-dmSans font-semibold text-base leading-[19.2px] text-[#FFFFFF] py-3 px-8 bg-[#147AFF] rounded-lg transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60">
+          <button className=" font-dmSans font-semibold text-base leading-[19.2px] text-[#FFFFFF] py-3 px-8 bg-[#147AFF] rounded-lg transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60" onClick={()=>{conditionalModal("allService")}}>
             Next
           </button>
         </div>

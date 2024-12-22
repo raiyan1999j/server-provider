@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MainLogo from "../../../public/colorLogo.png";
 import ServiceImg1 from "../../../public/serviceImg1.png";
 import ServiceImg2 from "../../../public/serviceImg2.png";
@@ -12,6 +12,8 @@ export default function SetupServer({modalCondition}) {
     const [secondToggle,setSecondToggle]= useState(true);
     const [selection,setSelection] = useState([]);
     const [modalEffect,setEffect] = useState(true);
+    const [selectTag,setSelectTag]= useState(false);
+    const tagRef = useRef("");
 
     const conditionalModal=(modal)=>{
       setEffect(false);
@@ -28,6 +30,11 @@ export default function SetupServer({modalCondition}) {
           return [...prev,items]
         }
       })
+    }
+    const tagSelection=(items)=>{
+      tagRef.current.value = items;
+
+      setSelectTag(false)
     }
   return (
     <>
@@ -58,17 +65,31 @@ export default function SetupServer({modalCondition}) {
               <div>
                 <label htmlFor="serverName" className=" font-dmSans font-normal text-sm leading-[18.23px] text-[#74778E] capitalize">server name</label>
                 <div className="w-full h-[60px] rounded-[5px] border border-[#313A6C] mt-[10px]">
-                  <input type="text" id="serverName" className="bg-transparent h-full w-full font-dmSans font-normal text-sm leading-[18.23px] text-[#919DB9] pl-[25px] placeholder:text-[#919DB9]" placeholder="Example Site" />
+                  <input type="text" id="serverName" className="bg-transparent h-full w-full font-dmSans font-normal text-sm leading-[18.23px] text-[#919DB9] pl-[25px] placeholder:text-[#919DB9] focus:border-[#32BA7C] focus:border focus:outline-none focus:rounded-[5px]" placeholder="Example Site" />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="addTag" className=" font-dmSans font-normal text-sm leading-[18.23px] text-[#74778E] capitalize">add tag (optional)</label>
                 <div className="w-full h-[60px] rounded-[5px] border border-[#313A6C] relative mt-[10px]">
-                  <input type="text" id="addTag" className="bg-transparent h-full w-full font-dmSans font-normal text-sm leading-[18.23px] text-[#919DB9] pl-[25px] placeholder:text-[#919DB9] absolute top-0 left-0" placeholder="Select or create tags"/>
-                  <span className="absolute top-5 right-5 h-5 w-5 bg-[#313A6C] flex justify-center items-center rounded-[4px]">
+                  <input type="text" id="addTag" className="bg-transparent h-full w-full font-dmSans font-normal text-sm leading-[18.23px] text-[#919DB9] pl-[25px] placeholder:text-[#919DB9] absolute top-0 left-0 focus:border focus:border-[#32BA7C] focus:outline-none" ref={tagRef} placeholder="Select or create tags"/>
+                  <span className="absolute top-5 right-5 h-5 w-5 bg-[#313A6C] flex justify-center items-center rounded-[4px] hover:cursor-pointer" onMouseEnter={()=>{setSelectTag(true)}}>
                     <IoIosArrowDown className="text-[#C1C9DE]"/>
                   </span>
+
+                  <div className={`absolute top-[58px] right-0 w-[80%] rounded-lg bg-[#313A6C]/80 transition-all duration-150 ease-linear ${selectTag?"opacity-100":"opacity-0"}`} onMouseLeave={()=>{setSelectTag(false)}}>
+                    <ul className="font-dmSans font-normal text-sm leading-[18.23px] text-[#919DB9] capitalize flex flex-col gap-y-2 px-4 py-2">
+                      <li className="rounded-md transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-gray-700" onClick={()=>{tagSelection("plugin name")}}>
+                        plugin name
+                      </li>
+                      <li className="rounded-md transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-gray-700" onClick={()=>{tagSelection("plugin name")}}>
+                        plugin name
+                      </li>
+                      <li className="rounded-md transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-gray-700" onClick={()=>{tagSelection("plugin name")}}>
+                        plugin name
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
