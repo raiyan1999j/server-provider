@@ -11,6 +11,7 @@ export default function CreateService({modalCondition}) {
   const sampleName = useRef("");
   const [warnCond,setWarnCond] = useState(false);
   const [selection,setSelection] = useState([]);
+  const [modalEffect,setEffect] = useState(true);
 
   const formHandler=(event)=>{
     event.preventDefault();
@@ -31,6 +32,14 @@ export default function CreateService({modalCondition}) {
         return [...prev,idNumber]
       }
     })
+  }
+
+  const conditionalModal=()=>{
+    setEffect(false);
+
+    setTimeout(()=>{
+      modalCondition("setupServer")
+    },200)
   }
   useEffect(()=>{
     if(warnCond){
@@ -57,13 +66,13 @@ export default function CreateService({modalCondition}) {
         </div>
       </section>
 
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px]`}>
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px] transition-all duration-500 ease-linear ${modalEffect?"opacity-100":"opacity-0"}`}>
         <div className="w-[986px] mx-auto flex flex-row justify-between items-center">
           <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] text-[#FFFFFF] capitalize">
             create blueprint
           </h2>
 
-          <span className="h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]" onClick={()=>{modalCondition("setupServer")}}>
+          <span className="h-6 w-6 rounded-lg border border-[#919DB9] flex justify-center items-center transition-all duration-150 ease-linear hover:cursor-pointer group hover:border-[#919DB9]/60 active:bg-[#919DB9]" onClick={conditionalModal}>
         <RxCross2 className="text-[#919DB9] transition-all duration-150 ease-linear group-hover:scale-125 active:text-black" />
         </span>
         </div>

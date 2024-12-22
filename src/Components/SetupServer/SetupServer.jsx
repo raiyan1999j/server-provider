@@ -11,7 +11,15 @@ export default function SetupServer({modalCondition}) {
     const [firstToggle,setFirstToggle] = useState(false);
     const [secondToggle,setSecondToggle]= useState(true);
     const [selection,setSelection] = useState([]);
+    const [modalEffect,setEffect] = useState(true);
 
+    const conditionalModal=(modal)=>{
+      setEffect(false);
+
+      setTimeout(()=>{
+        modalCondition(modal)
+      },200)
+    }
     const optSelection=(items)=>{
       setSelection((prev)=>{
         if(prev.includes(items)){
@@ -23,7 +31,7 @@ export default function SetupServer({modalCondition}) {
     }
   return (
     <>
-      <section className="w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px]">
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"}`}>
         <div className="w-[890px] mx-auto">
           <div className="flex flex-row gap-x-[15px] w-full justify-center">
             <div>
@@ -181,14 +189,14 @@ export default function SetupServer({modalCondition}) {
             </div>
 
             <div className="flex flex-row items-center justify-end gap-x-8 mt-4 w-[842px] mx-auto">
-                <button className="flex flex-row font-dmSans font-normal text-sm leading-[14.4px] text-[#147AFF] gap-x-1 transition-all duration-150 ease-linear hover:text-white" onClick={()=>{modalCondition("allService")}}>
+                <button className="flex flex-row font-dmSans font-normal text-sm leading-[14.4px] text-[#147AFF] gap-x-1 transition-all duration-150 ease-linear hover:text-white" onClick={()=>{conditionalModal("allService")}}>
                     View all
                     <span className="h-4 w-4">
                     <LuArrowRight className="text-base"/>
                     </span>
                 </button>
 
-                <button className="flex flex-row gap-x-1 items-center font-dmSans font-semibold text-sm leading-[16.8px] text-[#FFFFFF] capitalize py-[11px] px-4 bg-[#147AFF] rounded-[4px] transition-all duration-150 ease-linear hover:bg-[#147AFF]/70" onClick={()=>{modalCondition("createService")}}>
+                <button className="flex flex-row gap-x-1 items-center font-dmSans font-semibold text-sm leading-[16.8px] text-[#FFFFFF] capitalize py-[11px] px-4 bg-[#147AFF] rounded-[4px] transition-all duration-150 ease-linear hover:bg-[#147AFF]/70" onClick={()=>{conditionalModal("createService")}}>
                 <span className="h-[18px] w-[18px]">
                 <FiPlus className="text-lg"/>
                 </span>

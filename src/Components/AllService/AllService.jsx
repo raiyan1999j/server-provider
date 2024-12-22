@@ -5,7 +5,15 @@ import { IoIosCheckmark } from "react-icons/io";
 
 export default function AllService({modalCondition}) {
     const [selection,setSelection] = useState([]);
+    const [modalEffect,setEffect] = useState(true);
 
+    const conditionalModal=(modal)=>{
+      setEffect(false);
+
+      setTimeout(()=>{
+        modalCondition(modal)
+      },200)
+    }
     const optSelection=(items)=>{
         setSelection((prev)=>{
           if(prev.includes(items)){
@@ -17,7 +25,7 @@ export default function AllService({modalCondition}) {
       }
   return (
     <>
-      <section className="w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8">
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8 transition-opacity duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"}`}>
         <div className="w-[986px] mx-auto flex flex-row items-center justify-between">
           <div>
             <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] capitalize text-[#FFFFFF]">all blueprint</h2>
@@ -25,7 +33,7 @@ export default function AllService({modalCondition}) {
 
           <div>
             <button className="flex flex-row items-center font-dmSans font-semibold text-lg leading-[16.8px] capitalize text-[#FFFFFF] bg-[#147AFF] rounded-[4px] py-[11.5px] px-4 gap-x-[0.5px] transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60" 
-            onClick={()=>{modalCondition("createService")}}>
+            onClick={()=>{conditionalModal("createService")}}>
             <span className="h-[18px] w-[18px]">
             <MdAdd className="text-[18px]"/>
             </span>
@@ -104,7 +112,8 @@ export default function AllService({modalCondition}) {
         </div>
 
         <div className="w-[986px] mx-auto mt-12 text-right">
-            <button className=" font-dmSans font-semibold text-base leading-[19.2px] capitalize text-[#FFFFFF] bg-[#2DC774] rounded-lg py-3 px-6 transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#2DC774]/60">
+            <button className=" font-dmSans font-semibold text-base leading-[19.2px] capitalize text-[#FFFFFF] bg-[#2DC774] rounded-lg py-3 px-6 transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#2DC774]/60"
+            onClick={()=>{conditionalModal("setupServer")}}>
                 ok
             </button>
         </div>
