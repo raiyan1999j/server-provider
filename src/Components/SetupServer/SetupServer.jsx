@@ -5,37 +5,7 @@ import ServiceImg2 from "../../../public/serviceImg2.png";
 import { IoIosArrowDown, IoIosCheckmark } from "react-icons/io";
 import { LuArrowRight } from "react-icons/lu";
 import { FiPlus } from "react-icons/fi";
-
-const existingProduct = [
-    {
-        title:"Blueprint Name One",
-        feature:"default",
-        accessible:[
-            {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
-            {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
-            {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
-            {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
-        ]
-    },
-    {
-        title:"Blueprint Name One",
-        accessible:[
-            {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
-            {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
-            {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
-            {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
-        ]
-    },
-    {
-        title:"Blueprint Name One",
-        accessible:[
-            {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
-            {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
-            {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
-            {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
-        ]
-    }
-]
+import { ExistingProduct } from "../LocalData/LocalData";
 
 export default function SetupServer({modalCondition}) {
     const [firstToggle,setFirstToggle] = useState(false);
@@ -173,7 +143,7 @@ export default function SetupServer({modalCondition}) {
 
             <div className="grid grid-cols-[repeat(3,_270px)] gap-x-4 w-[842px] mx-auto mt-4">
               {
-                existingProduct.map((items,index)=>{
+                ExistingProduct().slice(0,3).map((items,index)=>{
                     return <div className={`flex flex-row justify-between w-full bg-[#1D2239] px-4 py-4 rounded-md transition-all duration-150 ease-linear hover:cursor-pointer hover:border hover:border-[#147AFF] ${selection.includes(index)?"border border-[#147AFF]":"border-none"}`} onClick={()=>{optSelection(index)}} key={index}>
                 <div>
                   <div className="flex flex-row gap-x-[5px] mb-3">
@@ -211,7 +181,7 @@ export default function SetupServer({modalCondition}) {
             </div>
 
             <div className="flex flex-row items-center justify-end gap-x-8 mt-4 w-[842px] mx-auto">
-                <button className="flex flex-row font-dmSans font-normal text-sm leading-[14.4px] text-[#147AFF] gap-x-1 transition-all duration-150 ease-linear hover:text-white">
+                <button className="flex flex-row font-dmSans font-normal text-sm leading-[14.4px] text-[#147AFF] gap-x-1 transition-all duration-150 ease-linear hover:text-white" onClick={()=>{modalCondition("allService")}}>
                     View all
                     <span className="h-4 w-4">
                     <LuArrowRight className="text-base"/>

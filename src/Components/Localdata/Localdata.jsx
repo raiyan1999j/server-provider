@@ -86,3 +86,110 @@ export const ServiceList =()=>{
 
     return serviceList;
 }
+
+export const ExistingProduct=()=>{
+    const existingProduct = [
+        {
+            title:"Blueprint Name One",
+            feature:"default",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        },
+        {
+            title:"Blueprint Name One",
+            accessible:[
+                {txt:"A",txtColor:"#6C90B4",bg:"#CCE6FF"},
+                {txt:"N",txtColor:"#C5A153",bg:"#FFE2A4"},
+                {txt:"X",txtColor:"#CE7C7C",bg:"#FFC4C4"},
+                {txt:"4+",txtColor:"#171A30",bg:"#80B7FF"}
+            ]
+        }
+    ]
+
+    return existingProduct;
+}

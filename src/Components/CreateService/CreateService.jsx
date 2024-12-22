@@ -2,7 +2,7 @@ import { FaCheck, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FiAlertTriangle, FiSearch } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
 import { TbPencil } from "react-icons/tb";
-import { Container, ServiceList } from "../LocalData/Localdata";
+import { Container, ServiceList } from "../LocalData/LocalData";
 import { IoIosCheckmark } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
