@@ -10,7 +10,7 @@ export default function ResponsiveNav() {
 
   return (
     <>
-      <nav className="hidden mobileS:block mobileM:block mobileL:block h-20 w-full fixed bottom-0 left-0">
+      <nav className="hidden mobileS:block mobileM:block mobileL:block tablet:block h-20 w-full fixed bottom-0 left-0">
         <div className="relative h-full w-full">
           <div className={`absolute z-30 transition-transform duration-700 ease-linear w-full h-20 top-0 left-0 bg-[#1D2239] flex justify-center items-center ${toggleBar?"translate-y-0":"translate-y-20"}`}>
             
