@@ -7,7 +7,7 @@ import ResponsiveNav from './ResponsiveNav';
 export default function Navbar(){
     return(
         <>
-            <nav className="w-[1650px] h-[100px] mx-auto bg-[#1D2239] px-[50px] flex flex-row justify-between items-center mobileS:hidden">
+            <nav className="w-[1650px] h-[100px] mx-auto bg-[#1D2239] px-[50px] flex flex-row justify-between items-center mobileS:hidden mobileM:hidden">
           <div>
             <div className='w-[127.72px] h-[50px]'>
               <img src={MainLogo} alt="logoImg" className='h-full w-full object-cover' />

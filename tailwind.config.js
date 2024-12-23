@@ -10,7 +10,8 @@ export default {
         dmSans:["DM Sans", 'serif']
       },
       screens:{
-        "mobileS":{"min":"0px","max":"320px"}
+        "mobileS":{"min":"0px","max":"320px"},
+        "mobileM":{"min":"321px","max":"375px"}
       }
     },
   },
