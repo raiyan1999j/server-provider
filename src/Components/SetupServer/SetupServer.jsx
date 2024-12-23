@@ -38,9 +38,9 @@ export default function SetupServer({modalCondition}) {
     }
   return (
     <>
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:mt-0 mobileM:w-[375px]`}>
-        <div className="w-[890px] mx-auto mobileS:w-[320px] mobileM:w-[375px]">
-          <div className="flex flex-row gap-x-[15px] w-full justify-center mobileS:flex-col mobileS:items-center mobileS:gap-y-[15px] mobileM:flex-col mobileM:gap-y-[15px] mobileM:items-center">
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:mt-0 mobileM:w-[375px] mobileL:mt-0 mobileL:w-[425px]`}>
+        <div className="w-[890px] mx-auto mobileS:w-[320px] mobileM:w-[375px] mobileL:w-[425px]">
+          <div className="flex flex-row gap-x-[15px] w-full justify-center mobileS:flex-col mobileS:items-center mobileS:gap-y-[15px] mobileM:flex-col mobileM:gap-y-[15px] mobileM:items-center mobileL:flex-col mobileL:gap-y-[15px] mobileL:items-center">
             <div className=" mobileS:text-center mobileM:text-center">
               <h2 className="font-normal text-[40px] leading-[40px] text-[#FFFFFF] capitalize font-dmSans">Set Up Your Server With</h2>
             </div>
@@ -52,16 +52,16 @@ export default function SetupServer({modalCondition}) {
             </div>
           </div>
 
-          <div className="w-full text-center mt-5 mobileS:px-4 mobileM:px-4">
+          <div className="w-full text-center mt-5 mobileS:px-4 mobileM:px-4 mobileL:px-4">
             <p className="font-normal text-[15px] leading-5 font-dmSans text-[#919DB9]">
               Fill in the details below to get your server set up with xCloud
             </p>
           </div>
 
-          <div className="mt-12 mobileS:px-4 mobileM:px-4">
+          <div className="mt-12 mobileS:px-4 mobileM:px-4 mobileL:px-4">
             <h4 className=" font-dmSans font-medium text-lg leading-5 text-[#FFFFFF] mb-4">Server Details</h4>
 
-            <div className="grid grid-cols-[repeat(2,_430px)] gap-x-[30px] mobileS:grid-cols-1 mobileS:gap-y-[30px] mobileM:grid-cols-1 mobileM:gap-y-[30px]">
+            <div className="grid grid-cols-[repeat(2,_430px)] gap-x-[30px] mobileS:grid-cols-1 mobileS:gap-y-[30px] mobileM:grid-cols-1 mobileM:gap-y-[30px] mobileL:grid-cols-1 mobileL:gap-y-[30px]">
               <div>
                 <label htmlFor="serverName" className=" font-dmSans font-normal text-sm leading-[18.23px] text-[#74778E] capitalize">server name</label>
                 <div className="w-full h-[60px] rounded-[5px] border border-[#313A6C] mt-[10px]">
@@ -95,10 +95,10 @@ export default function SetupServer({modalCondition}) {
             </div>
           </div>
 
-          <div className="mt-8 mobileS:px-4 mobileM:px-4">
+          <div className="mt-8 mobileS:px-4 mobileM:px-4 mobileL:px-4">
             <h4 className=" font-dmSans font-medium text-lg leading-5 capitalize text-[#FFFFFF] mb-4">server type</h4>
 
-            <div className="grid grid-cols-[repeat(2,_430px)] gap-x-[30px] mobileS:grid-cols-1 mobileS:gap-y-[30px] mobileM:grid-cols-1 mobileM:gap-y-[30px]">
+            <div className="grid grid-cols-[repeat(2,_430px)] gap-x-[30px] mobileS:grid-cols-1 mobileS:gap-y-[30px] mobileM:grid-cols-1 mobileM:gap-y-[30px] mobileL:grid-cols-1 mobileL:gap-y-[30px]">
               <div className="border border-[#313A6C] rounded-[5px] flex justify-center pt-4 pb-6 transition-all duration-150 ease-linear hover:border-[#147AFF]">
                 <div className="flex flex-row items-center gap-x-[19px] w-[387px] mobileS:flex-col mobileS:gap-y-[19px] mobileM:flex-col mobilM:gap-y-[19px]">
                 <div className="w-12">
@@ -137,7 +137,7 @@ export default function SetupServer({modalCondition}) {
           </div>
 
           <div className="bg-[#171A30] py-6 mt-8 rounded-[5px]">
-            <div className="flex flex-row w-[842px] mx-auto mobileS:w-[320px] mobileS:px-4 mobileM:w-[375px] mobileM:px-4">
+            <div className="flex flex-row w-[842px] mx-auto mobileS:w-[320px] mobileS:px-4 mobileM:w-[375px] mobileM:px-4 mobileL:w-[375px] mobileL:px-4">
             <div className="w-[755px] mobileS:w-auto">
               <h2 className="font-normal text-2xl leading-5 font-dmSans capitalize text-[#FFFFFF] mb-3">Blueprints</h2>
               <p className="font-normal text-sm leading-6 text-[#919DB9]">
@@ -154,7 +154,7 @@ export default function SetupServer({modalCondition}) {
           </div>
 
           <div className="bg-[#171A30] py-6 mt-8 rounded-[5px]">
-            <div className="flex flex-row w-[842px] mx-auto mobileS:w-[320px] mobileS:px-4 mobileM:w-[320px] mobileM:px-4">
+            <div className="flex flex-row w-[842px] mx-auto mobileS:w-[320px] mobileS:px-4 mobileM:w-[320px] mobileM:px-4 mobileL:w-[320px] mobileL:px-4">
               <div className="w-[755px] mobileS:w-auto mobileM:w-auto">
                 <h2 className="font-normal text-2xl leading-5 font-dmSans capitalize text-[#FFFFFF] mb-3">blueprints</h2>
                 <p className="font-normal text-sm leading-6 text-[#919DB9]">
@@ -170,7 +170,7 @@ export default function SetupServer({modalCondition}) {
             </div>
             </div>
 
-            <div className="grid grid-cols-[repeat(3,_270px)] gap-x-4 w-[842px] mx-auto mt-4 mobileS:grid-cols-1 mobileS:gap-y-4 mobileS:w-[320px] mobileM:grid-cols-1 mobileM:gap-y-4 mobileM:w-[320px]">
+            <div className="grid grid-cols-[repeat(3,_270px)] gap-x-4 w-[842px] mx-auto mt-4 mobileS:grid-cols-1 mobileS:gap-y-4 mobileS:w-[320px] mobileM:grid-cols-1 mobileM:gap-y-4 mobileM:w-[320px] mobileL:grid-cols-1 mobileL:gap-y-4 mobileL:w-[320px]">
               {
                 ExistingProduct().slice(0,3).map((items,index)=>{
                     return <div className={`flex flex-row justify-between w-full bg-[#1D2239] px-4 py-4 rounded-md transition-all duration-150 ease-linear hover:cursor-pointer hover:border hover:border-[#147AFF] ${selection.includes(index)?"border border-[#147AFF]":"border-none"}`} onClick={()=>{optSelection(index)}} key={index}>
@@ -209,7 +209,7 @@ export default function SetupServer({modalCondition}) {
               }
             </div>
 
-            <div className="flex flex-row items-center justify-end gap-x-8 mt-4 w-[842px] mx-auto mobileS:w-[320px] mobileS:justify-between mobileS:px-2 mobileM:w-[320px] mobileM:justify-between mobileM:px-2">
+            <div className="flex flex-row items-center justify-end gap-x-8 mt-4 w-[842px] mx-auto mobileS:w-[320px] mobileS:justify-between mobileS:px-2 mobileM:w-[320px] mobileM:justify-between mobileM:px-2 mobileL:w-[320px] mobileL:justify-between mobileL:px-2">
                 <button className="flex flex-row font-dmSans font-normal text-sm leading-[14.4px] text-[#147AFF] gap-x-1 transition-all duration-150 ease-linear hover:text-white" onClick={()=>{conditionalModal("allService")}}>
                     View all
                     <span className="h-4 w-4">
@@ -226,7 +226,7 @@ export default function SetupServer({modalCondition}) {
             </div>
           </div>
 
-          <div className="mt-8 mobileS:px-4 mobileM:px-4">
+          <div className="mt-8 mobileS:px-4 mobileM:px-4 mobileL:px-4">
             <button className="font-normal font-dmSans text-[15px] leading-5 capitalize text-[#FFFFFF] flex flex-row gap-x-[13px] bg-[#2A325C] rounded-[4px] pl-5 py-[10px] pr-[10px]">
                 more advance settings
                 <span className="h-5 w-5 flex justify-center items-center">
