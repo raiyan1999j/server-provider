@@ -38,7 +38,7 @@ export default function SetupServer({modalCondition}) {
     }
   return (
     <>
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:mt-0 mobileM:w-[375px] mobileL:mt-0 mobileL:w-[425px] tablet:mt-0 tablet:w-[768px]`}>
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:mt-0 mobileM:w-[375px] mobileL:mt-0 mobileL:w-[425px] tablet:mt-0 tablet:w-[768px] laptop:w-[1024px]`}>
         <div className="w-[890px] mx-auto mobileS:w-[320px] mobileM:w-[375px] mobileL:w-[425px] tablet:w-[725px]">
           <div className="flex flex-row gap-x-[15px] w-full justify-center mobileS:flex-col mobileS:items-center mobileS:gap-y-[15px] mobileM:flex-col mobileM:gap-y-[15px] mobileM:items-center mobileL:flex-col mobileL:gap-y-[15px] mobileL:items-center">
             <div className=" mobileS:text-center mobileM:text-center">

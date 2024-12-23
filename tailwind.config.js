@@ -13,7 +13,8 @@ export default {
         "mobileS":{"min":"0px","max":"320px"},
         "mobileM":{"min":"321px","max":"375px"},
         "mobileL":{"min":"376px","max":"425px"},
-        "tablet":{"min":"426px","max":"768px"}
+        "tablet":{"min":"426px","max":"768px"},
+        "laptop":{"min":"769px","max":"1024px"}
       }
     },
   },
