@@ -38,7 +38,7 @@ export default function SetupServer({modalCondition}) {
     }
   return (
     <>
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"}`}>
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] mt-20 py-20 rounded-[10px] transition-all duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} hidden`}>
         <div className="w-[890px] mx-auto">
           <div className="flex flex-row gap-x-[15px] w-full justify-center">
             <div>

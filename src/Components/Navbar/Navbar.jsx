@@ -2,11 +2,12 @@ import MainLogo from '../../../public/logoWhite.png';
 import Avatar from "../../../public/avatar.png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { RiNotification2Line } from 'react-icons/ri';
+import ResponsiveNav from './ResponsiveNav';
 
 export default function Navbar(){
     return(
         <>
-            <nav className="w-[1650px] h-[100px] mx-auto bg-[#1D2239] px-[50px] flex flex-row justify-between items-center">
+            <nav className="w-[1650px] h-[100px] mx-auto bg-[#1D2239] px-[50px] flex flex-row justify-between items-center mobileS:hidden">
           <div>
             <div className='w-[127.72px] h-[50px]'>
               <img src={MainLogo} alt="logoImg" className='h-full w-full object-cover' />
@@ -38,7 +39,9 @@ export default function Navbar(){
               </div>
             </div>
           </div>
-        </nav>
+            </nav>
+
+            <ResponsiveNav/>
         </>
     )
 }

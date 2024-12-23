@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily:{
         dmSans:["DM Sans", 'serif']
+      },
+      screens:{
+        "mobileS":{"min":"0px","max":"320px"}
       }
     },
   },
