@@ -66,7 +66,7 @@ export default function CreateService({modalCondition}) {
         </div>
       </section>
 
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px] transition-all duration-500 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:w-[375px] mobileM:mt-0 mobileL:w-[425px] mobileL:mt-0`}>
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px] transition-all duration-500 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:w-[375px] mobileM:mt-0 mobileL:w-[425px] mobileL:mt-0 laptop:w-[1024px]`}>
         <div className="w-[986px] mx-auto flex flex-row justify-between items-center mobileS:w-[320px] mobileS:px-4 mobileM:w-[375px] mobileM:px-4 mobileL:w-[425px] mobileL:px-4">
           <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] text-[#FFFFFF] capitalize">
             create blueprint
@@ -219,7 +219,7 @@ export default function CreateService({modalCondition}) {
           })}
         </div>
 
-        <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px] mobileS:w-[320px] mobileS:justify-center mobileS:mb-20 mobileS:pr-0 mobileM:w-[375px] mobileM:justify-center mobileM:mb-20 mobileM:pr-0 mobileL:w-[425px] mobileL:justify-center mobileL:mb-20 mobileL:pr-0">
+        <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px] mobileS:w-[320px] mobileS:justify-center mobileS:mb-20 mobileS:pr-0 mobileM:w-[375px] mobileM:justify-center mobileM:mb-20 mobileM:pr-0 mobileL:w-[425px] mobileL:justify-center mobileL:mb-20 mobileL:pr-0 laptop:w-[1024px]">
           <button className=" font-dmSans font-semibold text-base leading-[19.2px] text-[#FFFFFF] py-3 px-8 bg-[#147AFF] rounded-lg transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60" onClick={()=>{conditionalModal("allService")}}>
             Next
           </button>
