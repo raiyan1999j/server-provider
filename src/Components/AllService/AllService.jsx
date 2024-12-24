@@ -25,8 +25,8 @@ export default function AllService({modalCondition}) {
       }
   return (
     <>
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8 transition-opacity duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:px-0 mobileM:w-[375px] mobileM:px-0`}>
-        <div className="w-[986px] mx-auto flex flex-row items-center justify-between mobileS:w-[320px] mobileS:flex-col mobileS:gap-y-4 mobileM:w-[375px] mobileM:flex-col mobileM:gap-y-4">
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8 transition-opacity duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:px-0 mobileM:w-[375px] mobileM:px-0 mobileL:w-[425px] mobileL:px-0`}>
+        <div className="w-[986px] mx-auto flex flex-row items-center justify-between mobileS:w-[320px] mobileS:flex-col mobileS:gap-y-4 mobileM:w-[375px] mobileM:flex-col mobileM:gap-y-4 mobileL:w-[425px] mobileL:flex-col mobileL:gap-y-4">
           <div>
             <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] capitalize text-[#FFFFFF]">all blueprint</h2>
           </div>
@@ -42,7 +42,7 @@ export default function AllService({modalCondition}) {
           </div>
         </div>
 
-        <div className="w-[986px] mx-auto grid grid-cols-[repeat(3,_318px)] gap-x-4 gap-y-4 mt-8 mobileS:w-[320px] mobileS:grid-cols-1 mobileS:px-4 mobileM:w-[375px] mobileM:grid-cols-1 mobileM:px-4">
+        <div className="w-[986px] mx-auto grid grid-cols-[repeat(3,_318px)] gap-x-4 gap-y-4 mt-8 mobileS:w-[320px] mobileS:grid-cols-1 mobileS:px-4 mobileM:w-[375px] mobileM:grid-cols-1 mobileM:px-4 mobileL:w-[425px] mobileL:grid-cols-1 mobileL:px-4">
           {ExistingProduct().map((items, index) => {
               return (
                 <div
@@ -111,7 +111,7 @@ export default function AllService({modalCondition}) {
             })}
         </div>
 
-        <div className="w-[986px] mx-auto mt-12 text-right mobileS:w-[320px] mobileS:text-center mobileS:mb-20 mobileM:w-[375px] mobileM:text-center mobileM:mb-20">
+        <div className="w-[986px] mx-auto mt-12 text-right mobileS:w-[320px] mobileS:text-center mobileS:mb-20 mobileM:w-[375px] mobileM:text-center mobileM:mb-20 mobileL:w-[425px] mobileL:text-center mobileL:mb-20">
             <button className=" font-dmSans font-semibold text-base leading-[19.2px] capitalize text-[#FFFFFF] bg-[#2DC774] rounded-lg py-3 px-6 transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#2DC774]/60"
             onClick={()=>{conditionalModal("setupServer")}}>
                 ok
