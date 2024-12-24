@@ -1,16 +1,39 @@
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Avatar from "../../../public/avatar.png";
 import PageLogo from "../../../public/logoWhite.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RiNotification2Line } from "react-icons/ri";
 
 export default function ResponsiveNav() {
     const [toggleBar,setToggle] = useState(false);
     const [userMenu,setMenu] = useState(false);
+    const [showOpt,setOpt] = useState(false)
 
+    useEffect(()=>{
+      let lastScroll = 0;
+
+      const handleScroll=()=>{
+        const current = window.scrollY;
+
+        if(current > lastScroll){
+          setOpt(false);
+          setToggle(false)
+        }else if(current < lastScroll){
+          setOpt(true)
+        }
+
+        lastScroll = current;
+      }
+
+      window.addEventListener("scroll",handleScroll);
+
+      return ()=>{
+        window.removeEventListener("scroll",handleScroll)
+      }
+    },[])
   return (
     <>
-      <nav className="hidden mobileS:block mobileM:block mobileL:block tablet:block h-20 w-full fixed bottom-0 left-0">
+      <nav className="hidden mobileS:block mobileM:block mobileL:block tablet:block h-20 w-full fixed bottom-0 left-0 z-50">
         <div className="relative h-full w-full">
           <div className={`absolute z-30 transition-transform duration-700 ease-linear w-full h-20 top-0 left-0 bg-[#1D2239] flex justify-center items-center ${toggleBar?"translate-y-0":"translate-y-20"}`}>
             
@@ -60,10 +83,11 @@ export default function ResponsiveNav() {
                 </div>
             </div>
 
-          <div className={`absolute z-50 h-20 w-20 rounded-full bg-[#171A30] flex flex-col gap-y-1 justify-center overflow-hidden pl-5 hover:cursor-pointer left-[35%] transition-all duration-500 ease-linear ${toggleBar?"top-[-20%]":"top-0"}`} onClick={()=>{
+          <div className={`absolute z-50 h-20 w-20 rounded-full bg-[#171A30] flex flex-col gap-y-1 justify-center overflow-hidden pl-5 hover:cursor-pointer left-[35%] transition-all duration-500 ease-linear ${toggleBar?"top-[-20%]":"top-0"} ${showOpt?"top-[-20%]":"top-[100%]"} mobileM:left-[38%] mobileL:left-[40%] tablet:left-[45%]`} onClick={()=>{
                 setToggle(!toggleBar);
                 setMenu(false)
-            }}>
+            }}
+            >
               <span className={`h-[3px] w-[60%] bg-white rounded-lg transition-all duration-200 ease-linear ${toggleBar?"rotate-45 translate-y-[10px]":""}`}></span>
               <span className={`h-[3px] w-[40%] bg-white rounded-lg transition-transform duration-300 ease-linear group-hover:translate-x-[100px] ${toggleBar?"translate-x-[100px]":""}`}></span>
               <span className={`h-[3px] w-[60%] bg-white rounded-lg transition-all duration-200 ease-linear ${toggleBar?"-rotate-45 translate-y-[-5px]":""}`}></span>
