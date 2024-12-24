@@ -25,7 +25,7 @@ export default function AllService({modalCondition}) {
       }
   return (
     <>
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8 transition-opacity duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:px-0 mobileM:w-[375px] mobileM:px-0 mobileL:w-[425px] mobileL:px-0`}>
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg mt-20 py-8 px-8 transition-opacity duration-150 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:px-0 mobileM:w-[375px] mobileM:px-0 mobileL:w-[425px] mobileL:px-0 laptop:w-[1024px]`}>
         <div className="w-[986px] mx-auto flex flex-row items-center justify-between mobileS:w-[320px] mobileS:flex-col mobileS:gap-y-4 mobileM:w-[375px] mobileM:flex-col mobileM:gap-y-4 mobileL:w-[425px] mobileL:flex-col mobileL:gap-y-4">
           <div>
             <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] capitalize text-[#FFFFFF]">all blueprint</h2>
