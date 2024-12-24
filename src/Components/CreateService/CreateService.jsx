@@ -66,8 +66,8 @@ export default function CreateService({modalCondition}) {
         </div>
       </section>
 
-      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px] transition-all duration-500 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:w-[375px] mobileM:mt-0`}>
-        <div className="w-[986px] mx-auto flex flex-row justify-between items-center mobileS:w-[320px] mobileS:px-4 mobileM:w-[375px] mobileM:px-4">
+      <section className={`w-[1050px] mx-auto bg-[#1D2239] rounded-lg pt-8 mt-[14px] transition-all duration-500 ease-linear ${modalEffect?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:mt-0 mobileM:w-[375px] mobileM:mt-0 mobileL:w-[425px] mobileL:mt-0`}>
+        <div className="w-[986px] mx-auto flex flex-row justify-between items-center mobileS:w-[320px] mobileS:px-4 mobileM:w-[375px] mobileM:px-4 mobileL:w-[425px] mobileL:px-4">
           <h2 className=" font-dmSans font-medium text-[32px] leading-[35.2px] text-[#FFFFFF] capitalize">
             create blueprint
           </h2>
@@ -77,7 +77,7 @@ export default function CreateService({modalCondition}) {
         </span>
         </div>
 
-        <div className="w-[986px] mx-auto mt-8 mobileS:w-[320px] mobileM:w-[375px]">
+        <div className="w-[986px] mx-auto mt-8 mobileS:w-[320px] mobileM:w-[375px] mobileL:w-[425px]">
           <div className="w-full h-[56px] relative">
           <form onSubmit={formHandler}>
             <input
@@ -93,9 +93,9 @@ export default function CreateService({modalCondition}) {
           </div>
         </div>
 
-        <div className="w-[986px] h-[60px] rounded-[4px] mx-auto bg-[#171A30] flex flex-row items-center justify-between pl-5 pr-[7px] mt-4 mobileS:w-[320px] mobileS:flex-col mobileS:gap-y-4 mobileS:pl-0 mobileM:w-[375px] mobileM:flex-col mobileM:gap-y-8 mobileM:pl-0">
+        <div className="w-[986px] h-[60px] rounded-[4px] mx-auto bg-[#171A30] flex flex-row items-center justify-between pl-5 pr-[7px] mt-4 mobileS:w-[320px] mobileS:flex-col mobileS:gap-y-4 mobileS:pl-0 mobileS:h-auto mobileS:py-2 mobileM:w-[375px] mobileM:flex-col mobileM:gap-y-8 mobileM:pl-0 mobileM:h-auto mobileM:py-2 mobileL:w-[425px] mobileL:flex-col mobileL:gap-y-10 mobileL:pl-0 mobileL:h-auto mobileL:py-2">
           <div>
-            <ul className="flex flex-row gap-x-10 mobileS:w-[320px] mobileS:overflow-x-scroll mobileS:h-10 mobileM:w-[375px] mobileM:overflow-x-scroll mobileM:h-10">
+            <ul className="flex flex-row gap-x-10 mobileS:w-[320px] mobileS:overflow-x-scroll mobileS:h-10 mobileM:w-[375px] mobileM:overflow-x-scroll mobileM:h-10 mobileL:w-[425px] mobileL:justify-between mobileL:px-2">
               <li className=" font-dmSans font-medium text-lg leading-5 capitalize text-[#A1A7BA] transition-all duration-150 ease-linear hover:cursor-pointer hover:text-[#FFFFFF] after:content-'' after:h-[2px] after:w-[100px] after:bg-white after:table after:translate-y-[18px] after:translate-x-[-18px] after:opacity-0 hover:after:opacity-100">
                 themes
               </li>
@@ -107,7 +107,7 @@ export default function CreateService({modalCondition}) {
               </li>
               <li
                 className=" font-dmSans font-medium text-lg leading-5 capitalize text-[#A1A7BA]
-                            transition-all duration-150 ease-linear hover:cursor-pointer hover:text-[#FFFFFF] after:content-'' after:table after:h-[2px] after:w-[170px] after:bg-white after:translate-y-[18px] after:translate-x-[-18px] after:opacity-0 hover:after:opacity-100"
+                            transition-all duration-150 ease-linear hover:cursor-pointer hover:text-[#FFFFFF] after:content-'' after:table after:h-[2px] after:w-[170px] after:bg-white after:translate-y-[18px] after:translate-x-[-18px] after:opacity-0 hover:after:opacity-100 mobileL:after:w-[140px]"
               >
                 popular plugins
               </li>
@@ -128,7 +128,7 @@ export default function CreateService({modalCondition}) {
           </div>
         </div>
 
-        <div className="w-[986px] mx-auto mt-[21px] flex flex-row flex-wrap gap-x-1 gap-y-4 pt-[14px] mobileS:mt-[50px] mobileS:w-[300px] mobileS:flex-nowrap mobileS:overflow-x-scroll mobileM:mt-[50px] mobileM:w-[345px] mobileM:flex-nowrap mobileM:overflow-x-scroll">
+        <div className="w-[986px] mx-auto mt-[21px] flex flex-row flex-wrap gap-x-1 gap-y-4 pt-[14px] mobileS:w-[300px] mobileS:flex-nowrap mobileS:overflow-x-scroll mobileM:w-[345px] mobileM:flex-nowrap mobileM:overflow-x-scroll mobileL:w-[425px]">
           {Container().map((items, index) => {
             const color = items.clr();
             return (
@@ -152,7 +152,7 @@ export default function CreateService({modalCondition}) {
           })}
         </div>
 
-        <div className="w-[986px] h-[524px] overflow-hidden mx-auto mt-6 grid grid-cols-[repeat(3,_318px)] gap-x-4 gap-y-4 mobileS:grid-cols-1 mobileS:w-[320px] mobileS:px-4 mobileS:overflow-y-visible mobileM:grid-cols-1 mobileM:w-[375px] mobileM:px-4 mobileM:overflow-y-visible">
+        <div className="w-[986px] h-[524px] overflow-hidden mx-auto mt-6 grid grid-cols-[repeat(3,_318px)] gap-x-4 gap-y-4 mobileS:grid-cols-1 mobileS:w-[320px] mobileS:px-4 mobileS:overflow-y-visible mobileM:grid-cols-1 mobileM:w-[375px] mobileM:px-4 mobileM:overflow-y-visible mobileL:grid-cols-1 mobileL:w-[375px] mobileL:px-4 mobileL:overflow-y-visible">
           {ServiceList().map((items, index) => {
             return (
               <div className={`w-full bg-[#171A30] rounded-[4px] pt-4 transition-all duration-150 ease-linear hover:border hover:border-[#147AFF] hover:cursor-pointer ${selection.includes(index)?"border border-[#147AFF]":"border-none"}`} key={index} onClick={()=>{optSelection(index)}}>
@@ -219,7 +219,7 @@ export default function CreateService({modalCondition}) {
           })}
         </div>
 
-        <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px] mobileS:w-[320px] mobileS:justify-center mobileS:mb-20 mobileS:pr-0 mobileM:w-[375px] mobileM:justify-center mobileM:mb-20 mobileM:pr-0">
+        <div className="w-[1050px] h-[75px] bg-[#232A4E] flex justify-end items-center pr-[56px] mobileS:w-[320px] mobileS:justify-center mobileS:mb-20 mobileS:pr-0 mobileM:w-[375px] mobileM:justify-center mobileM:mb-20 mobileM:pr-0 mobileL:w-[425px] mobileL:justify-center mobileL:mb-20 mobileL:pr-0">
           <button className=" font-dmSans font-semibold text-base leading-[19.2px] text-[#FFFFFF] py-3 px-8 bg-[#147AFF] rounded-lg transition-all duration-150 ease-linear hover:cursor-pointer hover:bg-[#147AFF]/60" onClick={()=>{conditionalModal("allService")}}>
             Next
           </button>
