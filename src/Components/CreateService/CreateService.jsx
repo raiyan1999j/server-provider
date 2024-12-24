@@ -50,7 +50,7 @@ export default function CreateService({modalCondition}) {
   },[warnCond])
   return (
     <>
-    <section className={`w-[1050px] h-[42px] mx-auto flex flex-row items-center justify-between mt-[72px] bg-[#f8a6430a] pl-6 pr-[18px] rounded-[4px] transition-all duration-150 ease-linear ${warnCond?"opacity-100":"opacity-0"} hidden`}>
+    <section className={`w-[1050px] h-[42px] mx-auto flex flex-row items-center justify-between mt-[72px] bg-[#f8a6430a] pl-6 pr-[18px] rounded-[4px] transition-all duration-150 ease-linear ${warnCond?"opacity-100":"opacity-0"} mobileS:w-[320px] mobileS:flex-col mobileS:mt-5 mobileM:w-[375px] mobileM:flex-col mobileM:mt-5 mobileL:w-[425px] mobileL:flex-col mobileL:mt-5`}>
         <div className="flex flex-row items-center gap-x-[10px]">
           <span>
           <FiAlertTriangle className="text-lg text-[#F8A643]"/>
